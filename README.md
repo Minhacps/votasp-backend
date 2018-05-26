@@ -64,3 +64,10 @@ Você pode ler mais sobre ele [aqui](https://github.com/Minhacps/votasp-backend/
 Esse worker fará o processo de validação dos public workers. Como enviamos a mesma verificação para vários workers, ele é o responsável por agrupar essa informação e checar se houve alguma fraude.
 
 Você pode ler mais sobre ele [aqui](https://github.com/Minhacps/votasp-backend/tree/master/worker-checker)
+
+
+## Message Broker
+Esse serviço é responsável por entregar as mensagens e organizar a fila de entrega das mesmas.
+Já existem projetos prontos como o RabbitMQ que até onde estamos vendo atendem nossas necessidades.
+
+Você pode ler mais sobre ele [aqui](https://github.com/Minhacps/votasp-backend/tree/master/message-broker).
