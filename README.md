@@ -79,3 +79,8 @@ São eles responsáveis por armazenar os dados da nossa aplicação. Estamos abe
 Armazenam informações das respostas dos usuários.
 
 Você pode ler mais sobre ele [aqui](https://github.com/Minhacps/votasp-backend/tree/master/api-answers/DB.md).
+
+### Process DB
+Armazena as informações de processamento. Ele é um cache para não precisarmos ficar refazendo os calculos o tempo todo.
+
+Você pode ler mais sobre ele [aqui](https://github.com/Minhacps/votasp-backend/tree/master/api-process/DB.md).
