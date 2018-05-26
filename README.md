@@ -46,3 +46,7 @@ Essa api é responsável por ler as respostas dos candidatos e disponibiliza-las
 A idéia por trás dessa API é possibilitar que projetos externos se conectem a ela. Assim poderemos usar esses dados de forma mais eficiente, já que as respostas dos candidatos são públicas.
 
 Você pode ler mais sobre ela [aqui](https://github.com/Minhacps/votasp-backend/tree/master/api-public-answers).
+
+
+## Workers (nossos guerreirinhos!)
+Esses caras vão fazer o trabalho pesado do nosso projeto. Eles é quem vão fazer o match pra gente.
