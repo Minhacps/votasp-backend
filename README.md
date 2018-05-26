@@ -7,34 +7,34 @@ Se pudéssemos resumir a arquitetura em uma única imagem, seria algo do tipo:
 
 
 ## Front-end (amarelo)
-O código do front-end pode ser encontrado [aqui](https://github.com/minhacps/votasp-app)
+O código do front-end pode ser encontrado [aqui](https://github.com/Minhacps/votasp-app)
 
 ## API's (verde e rosa)
-Cada uma de nossas API's tem responsábilidades definidas e por si só são bem simples.
+Cada uma de nossas API's tem responsabilidades definidas e por si só são bem simples.
 
 A idéia de termos feito dessa maneira é possibilitar que qualquer outra comunidade possa ajudar na linguagem que domina.
 
-Já o `API Gateway` é responsável por transformar multiplas APIs em uma única. Ele existe para simplificar o desenvolvimento do Front-end.
+Já o `API Gateway` é responsável por transformar múltiplas API's em uma única. Ele existe para simplificar o desenvolvimento do Front-end.
 
 ### Answers API
-Essa api é responsável armazenar e ler as respostas dos usuários.
+Essa API é responsável por armazenar e ler as respostas dos usuários.
 
 Ela também pode escrever (apenas) respostas dos candidatos. (podemos dividi-la se acharem melhor)
 
 Você pode ler mais sobre ela [aqui](https://github.com/Minhacps/votasp-backend/tree/master/api-answers).
 
 ### Questions API
-Essa api é responsável por ler as perguntas. Como essas perguntas são fixas, podemos pensar em uma forma simples e rápida de entrega.
+Essa API é responsável por ler as perguntas. Como essas perguntas são fixas, podemos pensar em uma forma simples e rápida de entrega.
 
 Você pode ler mais sobre ela [aqui](https://github.com/Minhacps/votasp-backend/tree/master/api-questions).
 
 ### Process API
-Essa api é responsável por processar a informação e fazer o match para o usuário.
+Essa API é responsável por processar a informação e fazer o match para o usuário.
 
 Ela é a mais complexa e você pode ler mais sobre ela [aqui](https://github.com/Minhacps/votasp-backend/tree/master/api-process)
 
 ### Public Answers API
-Essa api é responsável por ler as respostas dos candidatos e disponibiliza-las de forma pública.
+Essa API é responsável por ler as respostas dos candidatos e disponibiliza-las de forma pública.
 A idéia por trás dessa API é possibilitar que projetos externos se conectem a ela. Assim poderemos usar esses dados de forma mais eficiente, já que as respostas dos candidatos são públicas.
 
 Você pode ler mais sobre ela [aqui](https://github.com/Minhacps/votasp-backend/tree/master/api-public-answers).
@@ -46,7 +46,7 @@ Esses caras vão fazer o trabalho pesado do nosso projeto. Eles é quem vão faz
 ### Public Worker
 Esse worker fará o processo de match que está sendo definido na nossa [Prova de Conceito](https://github.com/Minhacps/votasp-poc-matcher).
 
-Nossa idéia para esse worker é que ele fosse público para qualquer pessoa instalar em sua maquina para ajudar a processar essas informações. (A idéia inicial é ele ser publico, mas se tivermos alguma dificuldade, usaremos ele internamente.)
+Nossa idéia para esse worker é que ele fosse público para que qualquer pessoa instalar em sua máquina e ajudar a processar essas informações. A idéia inicial é ele ser público, mas se tivermos alguma dificuldade, usaremos ele internamente.
 
 Por ele ser público vai nos ajudar a diminuir os custos com os servidores. Assim ficará mais fácil chegarmos a uma escala estadual ou até mesmo nacional se for preciso.
 
@@ -73,7 +73,7 @@ Armazenam informações das respostas dos usuários.
 Você pode ler mais sobre ele [aqui](https://github.com/Minhacps/votasp-backend/tree/master/api-answers/DB.md).
 
 ### Process DB
-Armazena as informações de processamento. Ele é um cache para não precisarmos ficar refazendo os calculos o tempo todo.
+Armazena as informações de processamento. Ele é um cache para não precisarmos ficar refazendo os cálculos o tempo todo.
 
 Você pode ler mais sobre ele [aqui](https://github.com/Minhacps/votasp-backend/tree/master/api-process/DB.md).
 
