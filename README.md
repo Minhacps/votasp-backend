@@ -74,3 +74,8 @@ Você pode ler mais sobre ele [aqui](https://github.com/Minhacps/votasp-backend/
 
 ## Bancos de dados
 São eles responsáveis por armazenar os dados da nossa aplicação. Estamos abertos a como eles serão montados, mas devem ser simples para os times que implementarão as API's que consomem deles.
+
+### Answers DB
+Armazenam informações das respostas dos usuários.
+
+Você pode ler mais sobre ele [aqui](https://github.com/Minhacps/votasp-backend/tree/master/api-answers/DB.md).
