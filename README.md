@@ -40,7 +40,7 @@ A idéia por trás dessa API é possibilitar que projetos externos se conectem a
 Você pode ler mais sobre ela [aqui](https://github.com/Minhacps/votasp-backend/tree/master/api-public-answers).
 
 
-## Workers (nossos guerreirinhos!)
+## Workers (nossos guerreirinhos!) (Vermelhos)
 Esses caras vão fazer o trabalho pesado do nosso projeto. Eles é quem vão fazer o match pra gente.
 
 ### Public Worker
