@@ -71,3 +71,6 @@ Esse serviço é responsável por entregar as mensagens e organizar a fila de en
 Já existem projetos prontos como o RabbitMQ que até onde estamos vendo atendem nossas necessidades.
 
 Você pode ler mais sobre ele [aqui](https://github.com/Minhacps/votasp-backend/tree/master/message-broker).
+
+## Bancos de dados
+São eles responsáveis por armazenar os dados da nossa aplicação. Estamos abertos a como eles serão montados, mas devem ser simples para os times que implementarão as API's que consomem deles.
