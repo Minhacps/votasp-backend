@@ -15,3 +15,10 @@ Cada uma de nossas API's tem responsábilidades definidas e por si só são bem 
 A idéia de termos feito dessa maneira é possibilitar que qualquer outra comunidade possa ajudar na linguagem que domina.
 
 Já o `API Gateway` é responsável por transformar multiplas APIs em uma única. Ele existe para simplificar o desenvolvimento do Front-end.
+
+### Answers API
+Essa api é responsável armazenar e ler as respostas dos usuários.
+
+Ela também pode escrever (apenas) respostas dos candidatos. (podemos dividi-la se acharem melhor)
+
+Você pode ler mais sobre ela [aqui](https://github.com/Minhacps/votasp-backend/tree/master/api-answers).
