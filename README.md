@@ -40,3 +40,9 @@ Você pode ler mais sobre ela [aqui](https://github.com/Minhacps/votasp-backend/
 Essa api é responsável por processar a informação e fazer o match para o usuário.
 
 Ela é a mais complexa e você pode ler mais sobre ela [aqui](https://github.com/Minhacps/votasp-backend/tree/master/api-process)
+
+### Public Answers API
+Essa api é responsável por ler as respostas dos candidatos e disponibiliza-las de forma pública.
+A idéia por trás dessa API é possibilitar que projetos externos se conectem a ela. Assim poderemos usar esses dados de forma mais eficiente, já que as respostas dos candidatos são públicas.
+
+Você pode ler mais sobre ela [aqui](https://github.com/Minhacps/votasp-backend/tree/master/api-public-answers).
