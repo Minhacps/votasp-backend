@@ -60,7 +60,7 @@ Por ele ser público vai nos ajudar a diminuir os custos com os servidores. Assi
 
 Você pode ler mais sobre ele [aqui](https://github.com/Minhacps/votasp-backend/tree/master/worker-public).
 
-## Checker Worker
+### Checker Worker
 Esse worker fará o processo de validação dos public workers. Como enviamos a mesma verificação para vários workers, ele é o responsável por agrupar essa informação e checar se houve alguma fraude.
 
 Você pode ler mais sobre ele [aqui](https://github.com/Minhacps/votasp-backend/tree/master/worker-checker)
