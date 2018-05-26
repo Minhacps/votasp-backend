@@ -8,3 +8,10 @@ Se pudéssemos resumir a arquitetura em uma única imagem, seria algo do tipo:
 
 ## Front-end (amarelo)
 O código do front-end pode ser encontrado [aqui](https://github.com/votasp-app)
+
+## API's (verde e rosa)
+Cada uma de nossas API's tem responsábilidades definidas e por si só são bem simples.
+
+A idéia de termos feito dessa maneira é possibilitar que qualquer outra comunidade possa ajudar na linguagem que domina.
+
+Já o `API Gateway` é responsável por transformar multiplas APIs em uma única. Ele existe para simplificar o desenvolvimento do Front-end.
