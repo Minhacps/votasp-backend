@@ -50,3 +50,12 @@ Você pode ler mais sobre ela [aqui](https://github.com/Minhacps/votasp-backend/
 
 ## Workers (nossos guerreirinhos!)
 Esses caras vão fazer o trabalho pesado do nosso projeto. Eles é quem vão fazer o match pra gente.
+
+### Public Worker
+Esse worker fará o processo de match que está sendo definido na nossa [Prova de Conceito](https://github.com/Minhacps/votasp-poc-matcher).
+
+Nossa idéia para esse worker é que ele fosse público para qualquer pessoa ajudar a processar essas informações. (A idéia inicial é ele ser publico, mas se tivermos alguma dificuldade, usaremos ele internamente.)
+
+Por ele ser público vai nos ajudar a diminuir os custos com os servidores. Assim ficará mais fácil chegarmos a uma escala estadual ou até mesmo nacional se for preciso.
+
+Você pode ler mais sobre ele [aqui](https://github.com/Minhacps/votasp-backend/tree/master/worker-public).
