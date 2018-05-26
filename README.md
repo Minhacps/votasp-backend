@@ -5,14 +5,6 @@ Esse repositório contém códigos referentes ao back-end do VotaSP. O repositó
 Se pudéssemos resumir a arquitetura em uma única imagem, seria algo do tipo:
 ![Diagrama representando a arquitetura de microserviços](https://user-images.githubusercontent.com/903193/40364158-f93d35f4-5da7-11e8-8ba8-964a43549505.png)
 
-## Serviços externos
-Usaremos o Auth0 e teremos um bot no twitter. (Bot tem uma descrição la pra baixo)
-
-### Auth0
-Nossos únicos dados de usuários ficam armazenados lá. A idéia é ter apenas dados relacionados a autenticação do usuário, quanto menos informação coletarmos, mais anonimato daremos aos usuários.
-
-Com isso, todos os outros serviços só precisam ter acesso ao id do usuário e se ele é um candidado ou não.
-
 
 ## Front-end (amarelo)
 O código do front-end pode ser encontrado [aqui](https://github.com/votasp-app)
@@ -84,3 +76,12 @@ Você pode ler mais sobre ele [aqui](https://github.com/Minhacps/votasp-backend/
 Armazena as informações de processamento. Ele é um cache para não precisarmos ficar refazendo os calculos o tempo todo.
 
 Você pode ler mais sobre ele [aqui](https://github.com/Minhacps/votasp-backend/tree/master/api-process/DB.md).
+
+
+## Serviços externos
+Usaremos o Auth0 e teremos um bot no twitter.
+
+### Auth0
+Nossos únicos dados de usuários ficam armazenados lá. A idéia é ter apenas dados relacionados a autenticação do usuário, quanto menos informação coletarmos, mais anonimato daremos aos usuários.
+
+Com isso, todos os outros serviços só precisam ter acesso ao id do usuário e se ele é um candidado ou não.
