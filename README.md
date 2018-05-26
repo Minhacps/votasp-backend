@@ -58,7 +58,7 @@ Esse worker fará o processo de validação dos public workers. Como enviamos a 
 Você pode ler mais sobre ele [aqui](https://github.com/Minhacps/votasp-backend/tree/master/worker-checker)
 
 
-## Message Broker
+## Message Broker (Cinza)
 Esse serviço é responsável por entregar as mensagens e organizar a fila de entrega das mesmas.
 Já existem projetos prontos como o RabbitMQ que até onde estamos vendo atendem nossas necessidades.
 
