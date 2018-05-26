@@ -54,7 +54,7 @@ Esses caras vão fazer o trabalho pesado do nosso projeto. Eles é quem vão faz
 ### Public Worker
 Esse worker fará o processo de match que está sendo definido na nossa [Prova de Conceito](https://github.com/Minhacps/votasp-poc-matcher).
 
-Nossa idéia para esse worker é que ele fosse público para qualquer pessoa ajudar a processar essas informações. (A idéia inicial é ele ser publico, mas se tivermos alguma dificuldade, usaremos ele internamente.)
+Nossa idéia para esse worker é que ele fosse público para qualquer pessoa instalar em sua maquina para ajudar a processar essas informações. (A idéia inicial é ele ser publico, mas se tivermos alguma dificuldade, usaremos ele internamente.)
 
 Por ele ser público vai nos ajudar a diminuir os custos com os servidores. Assim ficará mais fácil chegarmos a uma escala estadual ou até mesmo nacional se for preciso.
 
