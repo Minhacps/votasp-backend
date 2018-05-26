@@ -33,3 +33,5 @@ Você pode ler mais sobre ela [aqui](https://github.com/Minhacps/votasp-backend/
 
 ### Questions API
 Essa api é responsável por ler as perguntas. Como essas perguntas são fixas, podemos pensar em uma forma simples e rápida de entrega.
+
+Você pode ler mais sobre ela [aqui](https://github.com/Minhacps/votasp-backend/tree/master/api-questions).
