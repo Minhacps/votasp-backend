@@ -22,3 +22,6 @@ Essa api é responsável armazenar e ler as respostas dos usuários.
 Ela também pode escrever (apenas) respostas dos candidatos. (podemos dividi-la se acharem melhor)
 
 Você pode ler mais sobre ela [aqui](https://github.com/Minhacps/votasp-backend/tree/master/api-answers).
+
+### Questions API
+Essa api é responsável por ler as perguntas. Como essas perguntas são fixas, podemos pensar em uma forma simples e rápida de entrega.
