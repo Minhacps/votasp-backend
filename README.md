@@ -85,3 +85,8 @@ Usaremos o Auth0 e teremos um bot no twitter.
 Nossos únicos dados de usuários ficam armazenados lá. A idéia é ter apenas dados relacionados a autenticação do usuário, quanto menos informação coletarmos, mais anonimato daremos aos usuários.
 
 Com isso, todos os outros serviços só precisam ter acesso ao id do usuário e se ele é um candidado ou não.
+
+### Twitter Bot
+Esse serviço é responsável por pressionar os candidados a responder as questões. (Gostei bastante do conceito que a Rosie do Serenata está fazendo)
+
+Você pode ler mais sobre ele [aqui](https://github.com/Minhacps/votasp-backend/tree/master/bot-twitter).
