@@ -90,3 +90,6 @@ Com isso, todos os outros serviços só precisam ter acesso ao id do usuário e 
 Esse serviço é responsável por pressionar os candidados a responder as questões. (Gostei bastante do conceito que a Rosie do Serenata está fazendo)
 
 Você pode ler mais sobre ele [aqui](https://github.com/Minhacps/votasp-backend/tree/master/bot-twitter).
+
+# Infraestrutura
+Você pode ler sobre como está nossa infra [aqui](https://github.com/Minhacps/votasp-backend/tree/master/infrastructure).
