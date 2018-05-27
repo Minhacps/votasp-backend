@@ -12,7 +12,7 @@ O message broker terá 3 filas diferentes (inicialmente) de mensagens. (Sinta-se
 # To Process
 Essa fila receberá mensagens da `process api` toda a vez que alguém terminou de responder as questões e quer fazer o match das informações.
 
-Ao receber mensagem nessa fila, devemos enviar para uma quantidade X de maquinas distintas. A idéia disso é que possamos verificar se essas informações foram
+Ao receber mensagem nessa fila, devemos enviar para uma quantidade X de maquinas distintas. A idéia disso é que possamos verificar se essas informações foram processadas depois, no `checker worker`.
 
 Essa fila contem apenas as respostas e o id do usuário. (Estamos pensando em uma forma de randomizar as mensagens para que não seja possível analisar essas respostas).
 
