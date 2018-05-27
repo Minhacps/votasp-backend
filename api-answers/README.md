@@ -6,7 +6,7 @@ As informações do usuário geralmente serão passadas por meio de um token JWT
 Para desenvolver aqui, você vai precisar se comunicar principalmente com o pessoal de `front-end` e o pessoal da `Public Answers API`.
 
 ### Atenção
-É de extrema importancia que outros usuários não possam ver respostas de uns dos outros.
+É de extrema importancia que os usuários não possam ver as respostas uns dos outros.
 
 Para ler respostas públicas vamos usar a [Public Answers API](https://github.com/Minhacps/votasp-backend/tree/master/api-public-answers). Foque apenas nas próprias perguntas de cada usuário.
 
