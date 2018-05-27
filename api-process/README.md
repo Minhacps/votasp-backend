@@ -1,11 +1,11 @@
 # Process API
 Uma das APIs mais importantes do sistema.
 
-Ela é responsável por enviar e responder sobre o processamento do dos matches.
+Ela é responsável por enviar e responder sobre o processamento dos matches.
 
 Será ela a responsável por receber requests dos usuários para começar a processar as informações.
 Ela também envia mensagens para o `message broker` para que seja direcionado aos `public workers`.
-Após isso, ela recebe mensagens do `message broker` que tenham sido processadas e responde o usuário.
+Após isso, ela recebe mensagens do `message broker` que tenham sido processadas e responde ao usuário.
 
 PS: pensamos primariamente em desenvolver a api com HTTP, mas se achar necessário, podemos usar outra forma como um WebSocket.
 
