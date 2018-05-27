@@ -8,7 +8,7 @@ Ela não tem autenticação e mostra apenas os dados dos candidatos.
 
 ## GET /
 Obtem todas as respostas de todos os candidatos. (Necessário para os public workers)
-- Param `since` - Como os candidatos não podem alterar suas questões, podemos usar esse parametro para diminuir o trafego de dados para os public workers.
+- Param `since` - Como os candidatos não podem alterar suas respostas, podemos usar esse parametro para buscar somente as mais novas, diminuindo o trafego de dados para os public workers.
 
 ## GET /:email
 Obtem todas as respostas de um unico candidato pelo email cadastrado.
