@@ -1,0 +1,84 @@
+/* graphviz */
+digraph architecture {
+  node[shape=box]
+
+  /* rankdir=LR; */
+
+  bgcolor="transparent"
+
+  // Client-side Apps
+  node[fillcolor="#FFEB3B" style="filled" fontcolor="black"];
+  users_frontend[label="Progressive Web App"];
+
+  // API Gateways
+  node[fillcolor="#FFCCBC" style="filled" fontcolor="black"];
+  gateway_api[label="API Gateway"];
+
+  // External APIs
+  node[fillcolor="black" fontcolor="white"]
+  auth_api[label="Auth0"];
+  twitter_bot[label="Twitter Bot (pressure)"]
+
+  // Microservices
+  node[fillcolor="#C8E6C9" style="filled" fontcolor="black"];
+  answers_api[label="Answers API"]
+  questions_api[label="Questions API"]
+  process_api[label="Process API"]
+  public_questions_api[label="Public Answares API?"]
+
+  // Storage
+  node[fillcolor="#303F9F" style="filled" fontcolor="white"];
+  database[shape=record, label="Answers DB|{<eleitores>eleitores|<candidatos>candidatos}"];
+  process_db[label="Process DB"];
+
+  // Broker
+  node[fillcolor="#CFD8DC" style="filled" fontcolor="black"];
+  message_broker[shape=record, label="{ {<processIn>process (5x)| <doneIn>done (5x)| <checkedIn>checked} | Message Broker (RabbitMQ?) | {<processOut> process (5x)| <doneOut>done (5x)| <checkedOut> checked}}"]
+
+  // Workers
+  node[fillcolor="#CF3F30" style="filled" fontcolor="white"];
+  worker1[label="Public Workers"];
+  check_worker[label="Check Worker"]
+
+
+  {rank=same; auth_api, gateway_api, process_db};
+  {rank=same; questions_api, answers_api, process_api }
+  {rank=same; database, check_worker}
+  {rank=same; answers_api, twitter_bot }
+
+  subgraph client_side_apps {
+    users_frontend -> {auth_api, gateway_api} [dir=both]
+  }
+
+  subgraph auth {
+    gateway_api -> auth_api [style=dashed]
+  }
+
+  subgraph gateway {
+      gateway_api -> {answers_api, process_api, questions_api} [dir=both]
+  }
+
+  subgraph microservices {
+
+    answers_api -> database:eleitores [dir=both]
+    answers_api -> database:candidatos
+    database:eleitores -> process_api
+    database:candidatos -> public_questions_api
+    public_questions_api -> worker1
+    public_questions_api -> twitter_bot
+    process_api -> process_db [dir=both]
+  }
+
+  subgraph messages {
+    process_api -> message_broker:processIn [style=dashed]
+
+    check_worker -> message_broker:checkedIn [style=dashed]
+    worker1 -> message_broker:doneOut [style=dashed]
+  }
+
+  subgraph subscribers {
+    message_broker:processOut -> worker1 [style=dashed]
+    message_broker:doneIn -> check_worker [style=dashed]
+    message_broker:checkedOut -> process_api [style=dashed]
+  }
+}
