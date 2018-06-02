@@ -1,0 +1,98 @@
+swagger: '2.0'
+info:
+  description: >-
+    VotaSP - Questions API. Essa API é responsável por prover 
+    as perguntas que serão feitas para candidatos e eleitores.
+  version: 1.0.0
+  title: VotaSP - Questions API
+host: questions.votasp.local
+basePath: /
+schemes:
+  - http
+paths:
+  /:
+    get:
+      summary: Obtém todas as perguntas
+      description: ''
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Question'
+          examples:
+            application/json: |
+              [
+                {
+                    "id": 1,
+                    "question": "Baby, baby do baby do biruleibe leibe.",
+                    "version": 1
+                },
+                {
+                    "id": 2,
+                    "question": "O ovo veio antes da galinha.",
+                    "version": 1
+                },
+                {
+                    "id": 3,
+                    "question": "Não é um transformers, mas é um bom filme",
+                    "version": 1
+                },
+                {
+                    "id": 4,
+                    "question": "Urso é cultura jovem",
+                    "version": 2
+                }
+              ]
+  /{questionId}:
+    get:
+      summary: Obtém uma pergunta
+      description: ''
+      produces:
+        - application/json
+      parameters:
+        - name: questionId
+          in: path
+          description: Id da pergunta
+          type: integer
+          format: int32
+          minimum: 1
+          required: true
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Question'
+          examples:
+            application/json: |
+              {
+                  "id": 1,
+                  "question": "Baby, baby do baby do biruleibe leibe.",
+                  "version": 1
+              }
+              
+definitions:
+  Question:
+    type: object
+    required:
+        - id
+        - version
+        - question
+    properties:
+      id:
+        type: integer
+        minimum: 1
+        format: int32
+      version:
+        type: integer
+        minimum: 1
+        format: int32
+      question:
+        type: string
+
+externalDocs:
+  description: Consulte a especificação completa no repositório de backend
+  url: 'https://github.com/Minhacps/votasp-backend/tree/master/api-questions'
