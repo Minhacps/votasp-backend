@@ -1,0 +1,167 @@
+swagger: '2.0'
+info:
+  description: >-
+    VotaSP - Answers API. Essa API é responsável por disponibilizar 
+    e coletar, de forma privada (com autenticação) as respostas de
+    um candidato ou eleitor.
+  version: 1.0.0
+  title: VotaSP - Answers API
+host: answers.votasp.local
+basePath: /
+schemes:
+  - http
+paths:
+  /:
+    get:
+      summary: Obtém todas as respostas do usuário
+      description: ''
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Answer'
+          examples:
+            application/json: |
+              [
+                {
+                    "questionId": 1,
+                    "answer": "concordo_plenamente",
+                    "questionVersion": 1
+                },
+                {
+                    "questionId": 2,
+                    "answer": "discordo",
+                    "questionVersion": 1
+                },
+                {
+                    "questionId": 3,
+                    "answer": "concordo",
+                    "questionVersion": 1
+                },
+                {
+                    "questionId": 4,
+                    "answer": "discordo_plenamente",
+                    "questionVersion": 2
+                }
+              ]
+      # security:
+      #   - auth0:
+      #       - 'read:answers'
+    put:
+      summary: Atualiza todas as respostas do usuário
+      description: ''
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: Array com as respostas do usuário
+          required: true
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Answer'
+      responses:
+        '204':
+          description: OK
+        '405':
+          description: Formato inválido
+      # security:
+      #   - auth0:
+      #       - 'write:answers'
+    delete:
+      summary: Remove todas as respostas do usuário
+      responses:
+        '204':
+          description: OK
+      # security:
+      #   - auth0:
+      #       - 'write:answers'
+  /{questionId}:
+    put:
+      summary: Atualiza uma das respostas do usuário
+      description: ''
+      consumes:
+        - application/json
+      parameters:
+        - name: questionId
+          in: path
+          description: Id da pergunta
+          type: integer
+          format: int32
+          minimum: 1
+          required: true
+        - in: body
+          name: body
+          description: Resposta do usuário
+          required: true
+          schema:
+            $ref: '#/definitions/Answer'
+      responses:
+        '204':
+          description: OK
+        '404':
+          description: Pergunta não encontrada
+        '405':
+          description: Formato inválido
+      # security:
+      #   - auth0:
+      #       - 'write:answers'
+    delete:
+      summary: Remove uma resposta do usuário
+      parameters:
+        - name: questionId
+          in: path
+          description: Id da pergunta
+          type: integer
+          format: int32
+          minimum: 1
+          required: true
+      responses:
+        '204':
+          description: OK
+        '404':
+          description: Resposta não encontrada
+      # security:
+      #   - auth0:
+      #       - 'write:answers'
+securityDefinitions:
+  auth0:
+    type: oauth2
+    authorizationUrl: https://YOUR_AUTH0_DOMAIN/authorize
+    flow: implicit
+    scopes:
+      'write:answers': modificar respostas
+      'read:answers': ler respostas
+definitions:
+  Answer:
+    type: object
+    required:
+        - questionId
+        - questionVersion
+        - answer
+    properties:
+      questionId:
+        type: integer
+        format: int32
+        minimum: 1
+      questionVersion:
+        type: integer
+        format: int32
+        minimum: 1
+      answer:
+        type: string
+        description: Resposta do usuário à questão
+        enum:
+          - discordo_plenamente
+          - discordo
+          - indiferente
+          - concordo
+          - concordo_plenamente
+externalDocs:
+  description: Consulte a especificação completa no repositório de backend
+  url: 'https://github.com/Minhacps/votasp-backend/tree/master/api-answers'

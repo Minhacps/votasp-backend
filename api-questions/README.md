@@ -28,4 +28,4 @@ docker-compose -f docker-compose.mock.yml down
 
 ### Documentação
 
-Após levantar o mock, a documentação estará disponível em (http://questions.votasp.local/swagger)
+Após levantar o mock, a documentação estará disponível em (http://questions.votasp.local/swagger/)

@@ -24,31 +24,29 @@ Respostas seguem as seguintes regras:
   - Eleitores podem ignorar a questões, candidatos não podem.
 
 
-## Rotas
+## Mock API
 
-### GET /
-obtem todas as respostas que o usuário preencheu
+Por hora temos uma versão mockada da API, para uso durante o desenvolvimento do frontend. A [especificação atual](/api-answers/mock/api.yml) é somente uma proposta, e pode ser alterada caso necessário 
 
-### PUT /:questionId
-Atualiza/Adiciona resposta a essa questão.
+### Iniciando
 
-### PUT /
-Atualiza/Adiciona um array de respostas. (Substitua sempre os mesmos ID's)
+Para iniciar o mock da api basta executar, nesta pasta:
+```
+docker-compose -f docker-compose.mock.yml up
+```
 
-### DELETE /:questionId
-Deleta uma resposta do usuário.
+A api estará disponível em (http://answers.votasp.local/)
 
+Se desejar que o comando seja executado em background, basta executar com a opção `-d`:
+```
+docker-compose -f docker-compose.mock.yml up -d
+```
 
-## Estruturas básicas
-### Conjunto de respostas
-Devem ter um `userId` e um array de respostas.
+E quando desejar desativa-lo:
+```
+docker-compose -f docker-compose.mock.yml down
+```
 
-### Respostas
-Devem ter um `questionId` e uma das opções:
-  - Concordo Plenamente
-  - Concordo
-  - Discordo
-  - Discordo Plenamente
+### Documentação
 
-
-Se você achar de mudar alguma coisa ou adicionar uma nova regra, converse com o time.
+Após levantar o mock, a documentação estará disponível em (http://answers.votasp.local/swagger/)
