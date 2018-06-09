@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
   description: >-
-    VotaSP - Questions API. Essa API é responsável por prover 
+    VotaSP - Questions API. Essa API é responsável por prover
     as questões que serão analisadas por candidatos e eleitores.
   version: 1.0.0
   title: VotaSP - Questions API
@@ -30,7 +30,6 @@ paths:
                     "id": 1,
                     "question": "Baby, baby do baby do biruleibe leibe."
                 },
-
                 {
                     "id": 2,
                     "question": "O ovo veio antes da galinha."
@@ -69,7 +68,7 @@ paths:
                   "id": 1,
                   "question": "Baby, baby do baby do biruleibe leibe."
               }
-
+              
 definitions:
   Question:
     type: object
