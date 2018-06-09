@@ -1,8 +1,8 @@
 swagger: '2.0'
 info:
   description: >-
-    VotaSP - Questions API. Essa API é responsável por prover 
-    as perguntas que serão feitas para candidatos e eleitores.
+    VotaSP - Questions API. Essa API é responsável por prover
+    as questões que serão analisadas por candidatos e eleitores.
   version: 1.0.0
   title: VotaSP - Questions API
 host: questions.votasp.local
@@ -12,7 +12,7 @@ schemes:
 paths:
   /:
     get:
-      summary: Obtém todas as perguntas
+      summary: Obtém todas as questões
       description: ''
       produces:
         - application/json
@@ -45,14 +45,14 @@ paths:
               ]
   /{questionId}:
     get:
-      summary: Obtém uma pergunta
+      summary: Obtém uma questão
       description: ''
       produces:
         - application/json
       parameters:
         - name: questionId
           in: path
-          description: Id da pergunta
+          description: Id da questão
           type: integer
           format: int32
           minimum: 1

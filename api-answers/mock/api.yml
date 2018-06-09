@@ -84,7 +84,7 @@ paths:
       parameters:
         - name: questionId
           in: path
-          description: Id da pergunta
+          description: Id da questão
           type: integer
           format: int32
           minimum: 1
@@ -107,7 +107,7 @@ paths:
       parameters:
         - name: questionId
           in: path
-          description: Id da pergunta
+          description: Id da questão
           type: integer
           format: int32
           minimum: 1
