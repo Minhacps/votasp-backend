@@ -8,14 +8,14 @@ Para desenvolver aqui, você vai precisar se comunicar principalmente com o pess
 ### Atenção
 É de extrema importancia que os usuários não possam ver as respostas uns dos outros.
 
-Para ler respostas públicas vamos usar a [Public Answers API](https://github.com/Minhacps/votasp-backend/tree/master/api-public-answers). Foque apenas nas próprias perguntas de cada usuário.
+Para ler respostas públicas vamos usar a [Public Answers API](https://github.com/Minhacps/votasp-backend/tree/master/api-public-answers). Foque apenas nas próprias questões de cada usuário.
 
 Também pensamos em dividir o banco entre respostas públicas e privadas, pois apenas os eleitores devem ter acesso a suas próprias respostas.
 
 
 ## Respostas
 Respostas seguem as seguintes regras:
-  - Todos os usuários podem preencher as perguntas com:
+  - Todos os usuários podem preencher as questões com:
     - Concordo Plenamente
     - Concordo
     - Discordo
@@ -26,7 +26,7 @@ Respostas seguem as seguintes regras:
 
 ## Mock API
 
-Por hora temos uma versão mockada da API, para uso durante o desenvolvimento do frontend. A [especificação atual](/api-answers/mock/api.yml) é somente uma proposta, e pode ser alterada caso necessário 
+Por hora temos uma versão mockada da API, para uso durante o desenvolvimento do frontend. A [especificação atual](/api-answers/mock/api.yml) é somente uma proposta, e pode ser alterada caso necessário
 
 ### Iniciando
 
