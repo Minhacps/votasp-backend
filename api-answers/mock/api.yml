@@ -29,23 +29,19 @@ paths:
               [
                 {
                     "questionId": 1,
-                    "answer": "concordo_plenamente",
-                    "questionVersion": 1
+                    "answer": "concordo_plenamente"
                 },
                 {
                     "questionId": 2,
-                    "answer": "discordo",
-                    "questionVersion": 1
+                    "answer": "discordo"
                 },
                 {
                     "questionId": 3,
-                    "answer": "concordo",
-                    "questionVersion": 1
+                    "answer": "concordo"
                 },
                 {
                     "questionId": 4,
-                    "answer": "discordo_plenamente",
-                    "questionVersion": 2
+                    "answer": "discordo_plenamente"
                 }
               ]
       # security:
@@ -142,14 +138,9 @@ definitions:
     type: object
     required:
         - questionId
-        - questionVersion
         - answer
     properties:
       questionId:
-        type: integer
-        format: int32
-        minimum: 1
-      questionVersion:
         type: integer
         format: int32
         minimum: 1
