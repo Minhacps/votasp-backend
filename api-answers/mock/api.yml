@@ -10,6 +10,13 @@ host: answers.votasp.local
 basePath: /
 schemes:
   - http
+securityDefinitions:
+  Bearer:
+      type: apiKey
+      name: Authorization
+      in: header
+security:
+  - Bearer: []
 paths:
   /:
     get:
@@ -44,9 +51,6 @@ paths:
                     "answer": "discordo_plenamente"
                 }
               ]
-      # security:
-      #   - auth0:
-      #       - 'read:answers'
     put:
       summary: Atualiza todas as respostas do usuário
       description: ''
@@ -66,17 +70,11 @@ paths:
           description: OK
         '405':
           description: Formato inválido
-      # security:
-      #   - auth0:
-      #       - 'write:answers'
     delete:
       summary: Remove todas as respostas do usuário
       responses:
         '204':
           description: OK
-      # security:
-      #   - auth0:
-      #       - 'write:answers'
   /{questionId}:
     put:
       summary: Atualiza uma das respostas do usuário
@@ -104,9 +102,6 @@ paths:
           description: Pergunta não encontrada
         '405':
           description: Formato inválido
-      # security:
-      #   - auth0:
-      #       - 'write:answers'
     delete:
       summary: Remove uma resposta do usuário
       parameters:
@@ -122,17 +117,6 @@ paths:
           description: OK
         '404':
           description: Resposta não encontrada
-      # security:
-      #   - auth0:
-      #       - 'write:answers'
-securityDefinitions:
-  auth0:
-    type: oauth2
-    authorizationUrl: https://YOUR_AUTH0_DOMAIN/authorize
-    flow: implicit
-    scopes:
-      'write:answers': modificar respostas
-      'read:answers': ler respostas
 definitions:
   Answer:
     type: object
