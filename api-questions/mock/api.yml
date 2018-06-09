@@ -28,23 +28,19 @@ paths:
               [
                 {
                     "id": 1,
-                    "question": "Baby, baby do baby do biruleibe leibe.",
-                    "version": 1
+                    "question": "Baby, baby do baby do biruleibe leibe."
                 },
                 {
                     "id": 2,
-                    "question": "O ovo veio antes da galinha.",
-                    "version": 1
+                    "question": "O ovo veio antes da galinha."
                 },
                 {
                     "id": 3,
-                    "question": "Não é um transformers, mas é um bom filme",
-                    "version": 1
+                    "question": "Não é um transformers, mas é um bom filme"
                 },
                 {
                     "id": 4,
-                    "question": "Urso é cultura jovem",
-                    "version": 2
+                    "question": "Urso é cultura jovem"
                 }
               ]
   /{questionId}:
@@ -70,8 +66,7 @@ paths:
             application/json: |
               {
                   "id": 1,
-                  "question": "Baby, baby do baby do biruleibe leibe.",
-                  "version": 1
+                  "question": "Baby, baby do baby do biruleibe leibe."
               }
               
 definitions:
@@ -83,10 +78,6 @@ definitions:
         - question
     properties:
       id:
-        type: integer
-        minimum: 1
-        format: int32
-      version:
         type: integer
         minimum: 1
         format: int32
