@@ -1,8 +1,8 @@
 swagger: '2.0'
 info:
   description: >-
-    VotaSP - Statements API. Essa API é responsável por prover 
-    as perguntas que serão feitas para candidatos e eleitores.
+    VotaSP - Statements API. Essa API é responsável por prover
+    as questões que serão analisadas por candidatos(as) e eleitores(as).
   version: 1.0.0
   title: VotaSP - Statements API
 host: statements.votasp.local
@@ -12,7 +12,7 @@ schemes:
 paths:
   /:
     get:
-      summary: Obtém todas as perguntas
+      summary: Obtém todas as questões
       description: ''
       produces:
         - application/json
@@ -45,14 +45,14 @@ paths:
               ]
   /{statementId}:
     get:
-      summary: Obtém uma pergunta
+      summary: Obtém uma questão
       description: ''
       produces:
         - application/json
       parameters:
         - name: statementId
           in: path
-          description: Id da pergunta
+          description: Id da questão
           type: integer
           format: int32
           minimum: 1
@@ -68,7 +68,7 @@ paths:
                   "id": 1,
                   "statement": "Baby, baby do baby do biruleibe leibe."
               }
-              
+
 definitions:
   Statement:
     type: object

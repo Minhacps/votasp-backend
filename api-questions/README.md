@@ -1,11 +1,11 @@
 # Statements API
-Essa API é responsável por prover as perguntas que serão feitas para candidatos e eleitores.
+Essa API é responsável por prover as questões que serão analisadas por candidatos(as) e eleitores(as).
 
-Se for necessário adicionar mais campos, converse com o pessoal que está formulando as perguntas.
+Se for necessário adicionar mais campos, converse com o pessoal que está formulando as questões.
 
 ## Mock API
 
-Por hora temos uma versão mockada da API, para uso durante o desenvolvimento do frontend. A [especificação atual](/api-statements/mock/api.yml) é somente uma proposta, e pode ser alterada caso necessário 
+Por hora temos uma versão mockada da API, para uso durante o desenvolvimento do frontend. A [especificação atual](/api-statements/mock/api.yml) é somente uma proposta, e pode ser alterada caso necessário
 
 ### Iniciando
 
