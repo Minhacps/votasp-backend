@@ -24,6 +24,7 @@
     "koa": "^2.5.1"
   },
   "devDependencies": {
-    "jest": "^23.1.0"
+    "jest": "^23.1.0",
+    "supertest": "^3.1.0"
   }
 }
