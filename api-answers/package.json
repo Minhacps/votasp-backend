@@ -1,0 +1,19 @@
+{
+  "name": "@votasp/api-answers",
+  "version": "0.0.0",
+  "description": "Essa API é responsável por listar, editar, visualizar e remover respostas de um usuário.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Minhacps/votasp-backend.git"
+  },
+  "author": "VotaSP Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Minhacps/votasp-backend/issues"
+  },
+  "homepage": "https://github.com/Minhacps/votasp-backend#readme"
+}
