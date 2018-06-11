@@ -1,0 +1,13 @@
+version: '2.3'
+services:
+  questions-api:
+    image: votasp-questions:prod
+    build:
+      context: .
+      target: prod
+    ports:
+      - 80:80
+    environment:
+      - QUESTIONS_HOST=questions.votasp.org.br
+    extra_hosts:
+      - "questions.votasp.org.br:0.0.0.0"
