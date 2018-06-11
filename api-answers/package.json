@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Minhacps/votasp-backend/issues"
   },
-  "homepage": "https://github.com/Minhacps/votasp-backend#readme"
+  "homepage": "https://github.com/Minhacps/votasp-backend#readme",
+  "dependencies": {
+    "koa": "^2.5.1"
+  }
 }
