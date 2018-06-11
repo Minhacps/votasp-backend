@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/Minhacps/votasp-backend#readme",
   "dependencies": {
-    "koa": "^2.5.1"
+    "koa": "^2.5.1",
+    "koa-simple-healthcheck": "0.0.1"
   },
   "devDependencies": {
     "jest": "^23.1.0",
