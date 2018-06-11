@@ -4,6 +4,7 @@
   "description": "Essa API é responsável por listar, editar, visualizar e remover respostas de um usuário.",
   "main": "src/index.js",
   "scripts": {
+    "test:watch": "jest --watch",
     "test": "jest"
   },
   "jest": {
