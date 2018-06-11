@@ -1,0 +1,19 @@
+{
+  "name": "@votasp/api-questions",
+  "version": "0.0.0",
+  "description": "Questions API for the VotaSP project. We provide the questions here! :)",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Minhacps/votasp-backend.git"
+  },
+  "author": "VotaSP Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Minhacps/votasp-backend/issues"
+  },
+  "homepage": "https://github.com/Minhacps/votasp-backend#readme"
+}
