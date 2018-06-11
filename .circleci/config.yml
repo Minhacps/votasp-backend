@@ -1,0 +1,30 @@
+version: 2
+
+nodejs_tests: &nodejs_tests
+  docker:
+    - image: circleci/node
+  steps:
+    - checkout
+
+    - run:
+        name: install dependencies
+        command: |
+          cd ${CIRCLE_JOB%_*}
+          npm install
+
+    - run:
+        name: Run tests
+        command: |
+          cd ${CIRCLE_JOB%_*}
+          npm test
+
+jobs:
+
+  api-answers_tests:
+    <<: *nodejs_tests
+
+workflows:
+  version: 2
+  test_and_deploy:
+    jobs:
+      - api-answers_tests
