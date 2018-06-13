@@ -1,0 +1,24 @@
+http:
+  port: 80
+admin:
+  port: 9876
+  hostname: localhost
+apiEndpoints:
+  questions:
+    host: ${QUESTIONS_API_HOST}
+    paths: '/'
+    methods: ["GET", "OPTIONS"]
+serviceEndpoints:
+  questions:
+    url: mock-questions:4010
+policies:
+  - proxy
+  - jwt
+pipelines:
+  open:
+    apiEndpoints:
+      - questions
+    policies:
+      proxy:
+      - action:
+        questions: questions

@@ -1,0 +1,8 @@
+version: '2.3'
+services:
+  api-gateway:
+    image: votasp-api-gateway:dev
+    volumes:
+      - ./config:/app/config
+    env_file:
+      - ../votasp.env.dev
