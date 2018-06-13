@@ -58,8 +58,18 @@ jobs:
   api-answers_tests:
     <<: *nodejs_tests
 
+  api-answers_build:
+    <<: *generic_build
+
 workflows:
   version: 2
   test_and_deploy:
     jobs:
       - api-answers_tests
+      - api-answers_build:
+        requires:
+            - tests
+        filters:
+          branches:
+            only:
+              - master
