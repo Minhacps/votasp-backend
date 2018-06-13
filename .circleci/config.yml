@@ -67,9 +67,9 @@ workflows:
     jobs:
       - api-answers_tests
       - api-answers_build:
-        requires:
-            - tests
-        filters:
-          branches:
-            only:
-              - master
+          requires:
+            - api-answers_tests
+          filters:
+            branches:
+              only:
+                - master
