@@ -3,3 +3,5 @@ version: '2'
 services:
   api-answers:
     image: votasp/api_answers:$version
+    environment:
+      - NODE_ENV=production
