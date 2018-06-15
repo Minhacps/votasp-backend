@@ -5,13 +5,15 @@ const middlewares = require('./middlewares');
 const onExecuteGenerator = (port) =>
   () => console.log(`Running on port: ${port}`);
 
-module.exports = ({ port }) => {
+module.exports = async ({ port }) => {
   const onExecute = onExecuteGenerator(port);
 
   const api = new Koa();
   api.use( koaHealthcheck() );
 
-  api.use( middlewares() );
+  const composedMiddleware = await middlewares();
+  api.use(composedMiddleware);
+
 
   return api.listen( port, onExecute );
 }

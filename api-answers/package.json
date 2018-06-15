@@ -25,7 +25,8 @@
     "jwks-rsa": "^1.2.1",
     "koa": "^2.5.1",
     "koa-jwt": "^3.3.2",
-    "koa-simple-healthcheck": "0.0.1"
+    "koa-simple-healthcheck": "0.0.1",
+    "load-route-files": "^1.0.6"
   },
   "devDependencies": {
     "jest": "^23.1.0",
