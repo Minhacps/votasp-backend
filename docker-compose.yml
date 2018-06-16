@@ -1,0 +1,14 @@
+version: '2'
+services:
+  api-gateway:
+    extends:
+      file: api-gateway/docker-compose.yml
+      service: api-gateway
+  questions-api:
+    extends:
+      file: api-questions/docker-compose.yml
+      service: questions-api
+  answers-api:
+    extends:
+      file: api-answers/docker-compose.mock.yml
+      service: mock-answers

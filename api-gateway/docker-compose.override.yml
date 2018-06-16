@@ -1,8 +1,11 @@
-version: '2.3'
+version: '2'
 services:
   api-gateway:
     image: votasp-api-gateway:dev
+    build:
+      dockerfile: Dockerfile.dev
     volumes:
       - ./config:/app/config
     env_file:
+      - ../votasp.env
       - ../votasp.env.dev

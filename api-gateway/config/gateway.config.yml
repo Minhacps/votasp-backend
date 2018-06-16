@@ -1,24 +1,67 @@
 http:
   port: 80
-admin:
-  port: 9876
-  hostname: localhost
-apiEndpoints:
-  questions:
-    host: ${QUESTIONS_API_HOST}
-    paths: '/'
-    methods: ["GET", "OPTIONS"]
 serviceEndpoints:
-  questions:
-    url: mock-questions:4010
+  questions-service:
+    url: 'http://questions:30001'
+  answers-service:
+    url: 'http://answers:30002'
+
+apiEndpoints:
+  questions-api:
+    host: ${API_HOST}
+    paths: /questions-api/*
+  answers-api:
+    host: ${API_HOST}
+    paths: /answers-api/*
+  public-answers-api:
+    host: ${API_HOST}
+    paths: /public-answers-api/*
+  matcher:
+    host: ${API_HOST}
+    paths: /matcher/*
 policies:
-  - proxy
   - jwt
+  - proxy
+  - terminate
+
 pipelines:
-  open:
+  questions:
     apiEndpoints:
-      - questions
+      - questions-api
     policies:
-      proxy:
-      - action:
-        questions: questions
+      - proxy:
+        - action:
+            serviceEndpoint: questions-service
+  public-answers:
+    apiEndpoints:
+      - public-answers-api
+    policies:
+      - terminate:
+        -
+          action:
+            statusCode: 418
+            message: I'm a teapot
+  answers:
+    apiEndpoints:
+      - answers-api
+    policies:
+      - jwt:
+        - action:
+            secretOrPublicKeyFile: /app/config/pubKey.pem
+            checkCredentialExistence: false
+      - proxy:
+        - action:
+            serviceEndpoint: answers-service
+  matcher:
+    apiEndpoints:
+      - matcher
+    policies:
+      - jwt:
+        - action:
+            secretOrPublicKeyFile: /app/config/pubKey.pem
+            checkCredentialExistence: false
+      - terminate:
+        -
+          action:
+            statusCode: 418
+            message: I'm a teapot

@@ -14,12 +14,3 @@ COPY --from=build /app/ /app/
 WORKDIR /app
 
 CMD ["npm", "start"]
-
-
-FROM node:10-alpine as dev
-
-COPY --from=build /app/ /app/
-WORKDIR /app
-RUN npm install --only=dev
-
-CMD ["npx", "nodemon", "src/server.js"]

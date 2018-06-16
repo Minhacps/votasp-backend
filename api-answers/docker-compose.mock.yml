@@ -8,14 +8,14 @@ services:
      - ./mock/api.yml:/api/api.yml
     working_dir: /api
     expose:
-     - 4010
+     - 30002
   web:
     image: nginx:mainline-alpine
     volumes:
     - ./mock/api.yml:/var/www/api.yml
     - ./mock/nginx.conf:/etc/nginx/conf.d/default.conf
     ports:
-    - "80:80"
+    - "30002:80"
     environment:
     - NGINX_HOST=answers.votasp.local
     - NGINX_PORT=80

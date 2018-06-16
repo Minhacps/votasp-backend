@@ -1,12 +1,12 @@
-version: '2.3'
+version: '2'
 services:
   questions-api:
     image: votasp-questions:prod
     build:
       context: .
-      target: prod
-    ports:
-      - 80:80
+      dockerfile: Dockerfile.prod
+    expose:
+      - 30001
     environment:
       - QUESTIONS_HOST=questions.votasp.org.br
     extra_hosts:
