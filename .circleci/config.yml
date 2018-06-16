@@ -75,7 +75,7 @@ workflows:
           filters:
             branches:
               only:
-                - api-questions-deploy
+                - master
 
   test_and_deploy_api_questions:
     jobs:
@@ -86,4 +86,4 @@ workflows:
           filters:
             branches:
               only:
-                - api-questions-deploy
+                - master
