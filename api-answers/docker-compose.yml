@@ -1,7 +1,24 @@
 version: '2'
 
+volumes:
+  database_data:
+    driver: rancher-nfs
+
 services:
   api-answers:
     image: votasp/api_answers:$version
     environment:
       - NODE_ENV=production
+    links:
+      - database:database
+
+  database:
+    image: mongo
+    volumes:
+      - database_data:/data/db
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+      - MONGO_INITDB_ROOT_USERNAME=$MONGO_INITDB_ROOT_USERNAME
+      - MONGO_INITDB_ROOT_PASSWORD=$MONGO_INITDB_ROOT_PASSWORD
+      - MONGO_INITDB_DATABASE=answers
