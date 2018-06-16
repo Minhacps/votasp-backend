@@ -3,7 +3,7 @@ Essa API é responsável por prover as questões que serão analisadas por candi
 
 Se for necessário adicionar mais campos, converse com o pessoal que está formulando as questões.
 
-Por hora temos uma versão mockada da API, para uso durante o desenvolvimento do frontend. A [especificação atual](/api-questions/mock/api.yml) é somente uma proposta, e pode ser alterada caso necessário 
+Por hora temos uma versão mockada da API, para uso durante o desenvolvimento do frontend. A [especificação atual](/api-questions/mock/api.yml) é somente uma proposta, e pode ser alterada caso necessário
 
 ### Iniciando em modo de deselvolvimento
 
@@ -44,4 +44,3 @@ docker-compose build
 ### Documentação
 
 Após levantar a api, a documentação estará disponível em (http://questions.votasp.local/documentation)
-
