@@ -79,10 +79,10 @@ workflows:
 
   test_and_deploy_api_questions:
     jobs:
-      - api-questions_tests
+      #- api-questions_tests
       - api-questions_build:
-          requires:
-            - api-questions_tests
+          #requires:
+            #- api-questions_tests
           filters:
             branches:
               only:
