@@ -9,13 +9,13 @@ serviceEndpoints:
 apiEndpoints:
   questions-api:
     host: ${API_HOST}
-    paths: /questions-api/*
+    paths: /questions/*
   answers-api:
     host: ${API_HOST}
-    paths: /answers-api/*
+    paths: /answers/*
   public-answers-api:
     host: ${API_HOST}
-    paths: /public-answers-api/*
+    paths: /public-answers/*
   matcher:
     host: ${API_HOST}
     paths: /matcher/*
