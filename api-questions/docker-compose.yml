@@ -1,4 +1,4 @@
 version: '2'
 services:
   questions-api:
-    image: votasp/api_answers:$version
+    image: votasp/api_questions:$version
