@@ -22,9 +22,9 @@
   },
   "homepage": "https://github.com/Minhacps/votasp-backend#readme",
   "dependencies": {
-    "jwks-rsa": "^1.2.1",
+    "jwt-decode": "^2.2.0",
     "koa": "^2.5.1",
-    "koa-jwt": "^3.3.2",
+    "koa-joi-router": "^5.1.0",
     "koa-simple-healthcheck": "0.0.1",
     "load-route-files": "^1.0.6"
   },

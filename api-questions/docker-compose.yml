@@ -1,7 +1,7 @@
 version: '2'
 services:
   questions-api:
-    image: votasp-questions:prod
+    image: votasp/api_questions:$version
     build:
       context: .
       dockerfile: Dockerfile.prod
