@@ -3,7 +3,5 @@ services:
   api-gateway:
     image: votasp/api_gateway:$version
     build: .
-    ports:
-      - 80:80
     env_file:
       - ../votasp.env
