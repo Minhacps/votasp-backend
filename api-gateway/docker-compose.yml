@@ -4,6 +4,3 @@ services:
     image: votasp/api_gateway:$version
     env_file:
       - ../votasp.env
-    external_links:
-      - back-end/api-answers:api-answers
-      - back-end/api-questions:api-questions

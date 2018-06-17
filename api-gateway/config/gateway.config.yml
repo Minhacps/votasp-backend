@@ -2,9 +2,9 @@ http:
   port: 80
 serviceEndpoints:
   questions-service:
-    url: 'http://api-questions'
+    url: 'http://questions-api:30001'
   answers-service:
-    url: 'http://api-answers'
+    url: 'http://answers-api:30002'
 
 apiEndpoints:
   questions-api:
