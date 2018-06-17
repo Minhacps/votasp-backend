@@ -54,21 +54,35 @@ generic_build: &generic_build
               up -u -p -c -d
 
 jobs:
-
   api-answers_tests:
     <<: *nodejs_tests
-
   api-answers_build:
+    <<: *generic_build
+
+  #api-questions_tests:
+    #<<: *nodejs_tests
+  api-questions_build:
     <<: *generic_build
 
 workflows:
   version: 2
-  test_and_deploy:
+  test_and_deploy_api_answers:
     jobs:
       - api-answers_tests
       - api-answers_build:
           requires:
             - api-answers_tests
+          filters:
+            branches:
+              only:
+                - master
+
+  test_and_deploy_api_questions:
+    jobs:
+      #- api-questions_tests
+      - api-questions_build:
+          #requires:
+            #- api-questions_tests
           filters:
             branches:
               only:
