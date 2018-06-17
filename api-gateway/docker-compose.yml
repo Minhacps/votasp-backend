@@ -2,6 +2,5 @@ version: '2'
 services:
   api-gateway:
     image: votasp/api_gateway:$version
-    build: .
     env_file:
       - ../votasp.env
