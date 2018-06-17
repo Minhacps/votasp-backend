@@ -1,10 +1,8 @@
 version: '2'
 services:
   api-gateway:
-    image: votasp-api-gateway:prod
-    build:
-      context: .
-      dockerfile: Dockerfile.prod
+    image: votasp/api_gateway:$version
+    build: .
     ports:
       - 80:80
     env_file:
