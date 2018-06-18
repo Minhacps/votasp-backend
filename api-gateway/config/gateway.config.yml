@@ -2,9 +2,9 @@ http:
   port: 80
 serviceEndpoints:
   questions-service:
-    url: 'http://api-questions.back-end.rancher.internal'
+    url: 'http://api-questions'
   answers-service:
-    url: 'http://answers-api:30002'
+    url: 'http://api-answers'
 
 apiEndpoints:
   questions-api:
@@ -16,7 +16,7 @@ apiEndpoints:
   public-answers-api:
     host: ${API_HOST}
     paths: /public-answers/*
-  matcher:
+  matcher-api:
     host: ${API_HOST}
     paths: /matcher/*
 policies:
@@ -54,7 +54,7 @@ pipelines:
             serviceEndpoint: answers-service
   matcher:
     apiEndpoints:
-      - matcher
+      - matcher-api
     policies:
       - jwt:
         - action:

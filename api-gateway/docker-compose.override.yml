@@ -3,6 +3,7 @@ services:
   api-gateway:
     image: votasp-api-gateway:dev
     build:
+      context: .
       dockerfile: Dockerfile.dev
     volumes:
       - ./config:/app/config
