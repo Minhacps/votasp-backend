@@ -2,7 +2,7 @@ http:
   port: 80
 serviceEndpoints:
   questions-service:
-    url: 'http://questions-api:30001'
+    url: 'http://api-questions.back-end.rancher.internal'
   answers-service:
     url: 'http://answers-api:30002'
 
