@@ -31,7 +31,6 @@ pipelines:
     policies:
       - proxy:
         - action:
-            prependPath: false
             serviceEndpoint: questions-service
   public-answers:
     apiEndpoints:
@@ -52,7 +51,6 @@ pipelines:
             checkCredentialExistence: false
       - proxy:
         - action:
-            prependPath: false
             serviceEndpoint: answers-service
   matcher:
     apiEndpoints:
