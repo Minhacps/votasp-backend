@@ -47,7 +47,7 @@ pipelines:
     policies:
       - jwt:
         - action:
-            secretOrPublicKeyFile: /app/config/pubKey.pem
+            secretOrPublicKeyFile: config/pubKey.pem
             checkCredentialExistence: false
       - proxy:
         - action:
@@ -58,7 +58,7 @@ pipelines:
     policies:
       - jwt:
         - action:
-            secretOrPublicKeyFile: /app/config/pubKey.pem
+            secretOrPublicKeyFile: config/pubKey.pem
             checkCredentialExistence: false
       - terminate:
         -
