@@ -124,3 +124,7 @@ Você pode ler mais sobre ele [aqui](https://github.com/Minhacps/votasp-backend/
 
 ## Infraestrutura
 Você pode ler sobre como está nossa infra [aqui](https://github.com/Minhacps/votasp-backend/tree/master/infrastructure).
+
+## Contribuição
+
+Agradecemos por considerar contribuir com o VotaSP! Você encontra como fazê-lo em nosso [Guia de Contribuição](CONTRIBUTING.md).
