@@ -1,10 +1,8 @@
-version: '2.3'
+version: '2'
 services:
   questions-api:
-    image: votasp-questions:dev
-    build:
-      context: .
-      target: dev
+    image: votasp-api_answers
+    build: .
     volumes:
       - ./src:/app/src
       - ./package.json:/app/package.json
