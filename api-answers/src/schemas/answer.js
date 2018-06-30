@@ -1,10 +1,11 @@
 const Joi = require('joi');
 
 const POSSIBLE_ANSWERS = [
-  'concordo_plenamente',
-  'discordo',
-  'concordo',
   'discordo_plenamente',
+  'discordo',
+  'indiferente',
+  'concordo',
+  'concordo_plenamente',
 ];
 
 module.exports = Joi.object().keys({
