@@ -25,6 +25,7 @@
     "jwt-decode": "^2.2.0",
     "koa": "^2.5.1",
     "koa-joi-router": "^5.1.0",
+    "koa-respond": "^1.0.1",
     "koa-simple-healthcheck": "0.0.1",
     "load-route-files": "^1.0.6",
     "lodash": "^4.17.10",
