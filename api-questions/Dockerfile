@@ -22,4 +22,4 @@ COPY --from=build /app/ /app/
 WORKDIR /app
 RUN npm install --only=dev
 
-CMD ["npx", "nodemon", "src/server.js"]
+CMD ["npm", "start"]
