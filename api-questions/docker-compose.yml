@@ -2,3 +2,5 @@ version: '2'
 services:
   api-questions:
     image: votasp/api_questions:$version
+    environment:
+      - API_PORT=80
