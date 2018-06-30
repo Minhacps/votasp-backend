@@ -9,6 +9,10 @@ services:
     image: votasp/api_answers:$version
     environment:
       - NODE_ENV=production
+      - MONGODB_USER=$MONGO_INITDB_ROOT_USERNAME
+      - MONGODB_PASSWORD=$MONGO_INITDB_ROOT_PASSWORD
+      - MONGODB_HOST=database:27017
+      - MONGODB_DATABASE=answers
     links:
       - database:database
 
