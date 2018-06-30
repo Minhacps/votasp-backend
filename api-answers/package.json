@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/Minhacps/votasp-backend#readme",
   "dependencies": {
+    "joi": "^13.4.0",
     "jwt-decode": "^2.2.0",
     "koa": "^2.5.1",
     "koa-joi-router": "^5.1.0",
