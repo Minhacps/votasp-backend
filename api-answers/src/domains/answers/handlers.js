@@ -18,11 +18,27 @@ const _listAnswersGenerator = (type = 'Voter') =>
       .then( _genericResponseOrNotFound(context) )
       .catch( _genericInternalErrorGenerator(context) );
 
+const _saveAnswersGenerator = (type = 'Voter') =>
+  (context) =>
+    new Answers[type]({
+      userId: context.state.user.sub,
+      answers: context.request.body,
+    })
+      .save()
+      .then( _genericResponseOrNotFound(context) )
+      .catch( _genericInternalErrorGenerator(context) );
+
 const listUserAnswers = (context) =>
   context.state.user['isCandidate'] ?
     _listAnswersGenerator('Candidate')(context) :
     _listAnswersGenerator('Voter')(context);
 
+const saveUserAnswers = (context) =>
+  context.state.user['isCandidate'] ?
+    _saveAnswersGenerator('Candidate')(context) :
+    _saveAnswersGenerator('Voter')(context);
+
 module.exports = {
   listUserAnswers,
+  saveUserAnswers,
 };

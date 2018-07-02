@@ -56,4 +56,32 @@ describe('Domains/Answers/Handlers', () => {
     });
 
   });
+
+  describe('saveUserAnswers', () => {
+    const { saveUserAnswers } = require('./handlers');
+
+    it('should save candidate answer', async () => {
+
+      const context = {
+        state: { user: {
+          isCandidate: true,
+          sub: 'biru|laibe12345',
+        } },
+        request: {
+          body: _SampleAnswers.answers,
+        },
+        ok: jest.fn(),
+        notFound: jest.fn(),
+        internalServerError: jest.fn(),
+      };
+
+      await saveUserAnswers(context);
+
+      expect(context.ok.mock.calls.length).toBe(1);
+      expect(context.notFound.mock.calls.length).toBe(0);
+      expect(context.internalServerError.mock.calls.length).toBe(0);
+      expect(context.ok.mock.calls[0][0].toObject()).toMatchObject(_SampleAnswers);
+    });
+
+  });
 })
