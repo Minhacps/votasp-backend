@@ -10,4 +10,8 @@ router.get('/', {
   handler: handlers.listUserAnswers,
 });
 
+router.put('/', {
+  handler: handlers.saveUserAnswers,
+});
+
 module.exports = router.middleware();
