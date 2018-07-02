@@ -13,7 +13,7 @@ describe('Domains/Answers/Handlers', () => {
   describe('listUserAnswers', () => {
     const { listUserAnswers } = require('./handlers');
 
-    it('should list candidate answer', async () => {
+    it('should list candidate answers', async () => {
       mockingoose.CandidateAnswers.toReturn(_SampleAnswers, 'findOne');
 
       const context = {
