@@ -7,7 +7,7 @@ const Joi = require('joi');
 module.exports = [
     {
         method: 'GET',
-        path: '/questions',
+        path: '/',
         config: {
             description: 'Obtém todas as questões',
             tags: ['api'],
@@ -17,7 +17,7 @@ module.exports = [
     },
     {
         method: 'GET',
-        path: '/questions/{id}',
+        path: '/{id}',
         config: {
             description: 'Obtém uma questão',
             tags: ['api'],

@@ -23,12 +23,21 @@ policies:
   - jwt
   - proxy
   - terminate
+  - rewrite
 
 pipelines:
   questions:
     apiEndpoints:
       - questions-api
     policies:
+      -
+        rewrite:
+            -
+              condition:
+                name: regexpmatch
+                match: ^/questions/(.*)$
+              action:
+                rewrite: /$1
       - proxy:
         - action:
             serviceEndpoint: questions-service
@@ -36,6 +45,14 @@ pipelines:
     apiEndpoints:
       - public-answers-api
     policies:
+      -
+        rewrite:
+            -
+              condition:
+                name: regexpmatch
+                match: ^/public-answers/(.*)$
+              action:
+                rewrite: /$1
       - terminate:
         -
           action:
@@ -45,6 +62,14 @@ pipelines:
     apiEndpoints:
       - answers-api
     policies:
+      -
+        rewrite:
+            -
+              condition:
+                name: regexpmatch
+                match: ^/answers/(.*)$
+              action:
+                rewrite: /$1
       - jwt:
         - action:
             secretOrPublicKeyFile: config/pubKey.pem
@@ -56,6 +81,14 @@ pipelines:
     apiEndpoints:
       - matcher-api
     policies:
+      -
+        rewrite:
+            -
+              condition:
+                name: regexpmatch
+                match: ^/matcher/(.*)$
+              action:
+                rewrite: /$1
       - jwt:
         - action:
             secretOrPublicKeyFile: config/pubKey.pem
