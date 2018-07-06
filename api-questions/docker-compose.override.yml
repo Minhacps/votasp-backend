@@ -13,5 +13,6 @@ services:
       - ./package-lock.json:/app/package-lock.json
     environment:
       - QUESTIONS_HOST=questions.votasp.local
+      - API_PORT=3000
     extra_hosts:
       - "questions.votasp.local:0.0.0.0"
