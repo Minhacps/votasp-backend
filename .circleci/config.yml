@@ -64,6 +64,11 @@ jobs:
   api-questions_build:
     <<: *generic_build
 
+  #api-gateway_tests:
+    #<<: *nodejs_tests
+  api-gateway_build:
+    <<: *generic_build
+
 workflows:
   version: 2
   test_and_deploy_api_answers:
@@ -87,3 +92,14 @@ workflows:
             branches:
               only:
                 - master
+
+  test_and_deploy_api_gateway:
+    jobs:
+      #- api-gateway_tests
+      - api-gateway_build:
+          #requires:
+            #- api-gateway_tests
+          filters:
+            branches:
+              only:
+                - api-gateway

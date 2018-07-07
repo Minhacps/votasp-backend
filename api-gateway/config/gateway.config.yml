@@ -1,0 +1,100 @@
+http:
+  port: 80
+serviceEndpoints:
+  questions-service:
+    url: 'http://api-questions'
+  answers-service:
+    url: 'http://api-answers'
+
+apiEndpoints:
+  questions-api:
+    host: ${API_HOST}
+    paths: /questions/*
+  answers-api:
+    host: ${API_HOST}
+    paths: /answers/*
+  public-answers-api:
+    host: ${API_HOST}
+    paths: /public-answers/*
+  matcher-api:
+    host: ${API_HOST}
+    paths: /matcher/*
+policies:
+  - jwt
+  - proxy
+  - terminate
+  - rewrite
+
+pipelines:
+  questions:
+    apiEndpoints:
+      - questions-api
+    policies:
+      -
+        rewrite:
+            -
+              condition:
+                name: regexpmatch
+                match: ^/questions/(.*)$
+              action:
+                rewrite: /$1
+      - proxy:
+        - action:
+            serviceEndpoint: questions-service
+  public-answers:
+    apiEndpoints:
+      - public-answers-api
+    policies:
+      -
+        rewrite:
+            -
+              condition:
+                name: regexpmatch
+                match: ^/public-answers/(.*)$
+              action:
+                rewrite: /$1
+      - terminate:
+        -
+          action:
+            statusCode: 418
+            message: I'm a teapot
+  answers:
+    apiEndpoints:
+      - answers-api
+    policies:
+      -
+        rewrite:
+            -
+              condition:
+                name: regexpmatch
+                match: ^/answers/(.*)$
+              action:
+                rewrite: /$1
+      - jwt:
+        - action:
+            secretOrPublicKeyFile: config/pubKey.pem
+            checkCredentialExistence: false
+      - proxy:
+        - action:
+            serviceEndpoint: answers-service
+  matcher:
+    apiEndpoints:
+      - matcher-api
+    policies:
+      -
+        rewrite:
+            -
+              condition:
+                name: regexpmatch
+                match: ^/matcher/(.*)$
+              action:
+                rewrite: /$1
+      - jwt:
+        - action:
+            secretOrPublicKeyFile: config/pubKey.pem
+            checkCredentialExistence: false
+      - terminate:
+        -
+          action:
+            statusCode: 418
+            message: I'm a teapot

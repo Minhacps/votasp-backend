@@ -1,8 +1,12 @@
 version: '2'
 services:
   questions-api:
-    image: votasp-api_answers
-    build: .
+    image: votasp-questions:dev
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - 30001:30001
     volumes:
       - ./src:/app/src
       - ./package.json:/app/package.json

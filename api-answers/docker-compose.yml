@@ -5,7 +5,7 @@ volumes:
     driver: rancher-nfs
 
 services:
-  api-answers:
+  answers-api:
     image: votasp/api_answers:$version
     environment:
       - NODE_ENV=production
