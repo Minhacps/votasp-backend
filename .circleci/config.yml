@@ -102,4 +102,4 @@ workflows:
           filters:
             branches:
               only:
-                - api-gateway
+                - master
