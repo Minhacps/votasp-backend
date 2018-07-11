@@ -12,6 +12,7 @@ COPY package-lock.json /app/
 COPY config /app/config
 
 RUN npm install
+RUN npx eg plugins install express-gateway-plugin-rewrite
 ENV EG_DISABLE_CONFIG_WATCH=true
 WORKDIR /app
 

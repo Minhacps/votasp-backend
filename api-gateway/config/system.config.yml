@@ -20,3 +20,6 @@ refreshTokens:
   timeToExpiry: 7200000
 authorizationCodes:
   timeToExpiry: 300000
+
+plugins:
+  rewrite:
