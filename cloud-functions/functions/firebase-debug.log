@@ -1,0 +1,38 @@
+[debug] [2018-07-17T01:56:37.878Z] ----------------------------------------------------------------------
+[debug] [2018-07-17T01:56:37.880Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2018-07-17T01:56:37.880Z] CLI Version:   3.19.3
+[debug] [2018-07-17T01:56:37.880Z] Platform:      linux
+[debug] [2018-07-17T01:56:37.880Z] Node Version:  v10.4.0
+[debug] [2018-07-17T01:56:37.880Z] Time:          Mon Jul 16 2018 22:56:37 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2018-07-17T01:56:37.880Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-07-17T01:56:37.891Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-07-17T01:56:37.891Z] > authorizing via signed-in user
+[debug] [2018-07-17T01:56:37.894Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/vota-sp-dev  
+  
+ Mon Jul 16 2018 22:56:37 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2018-07-17T01:56:38.701Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-17T01:56:38.702Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/vota-sp-dev/tokens  
+  
+ Mon Jul 16 2018 22:56:38 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2018-07-17T01:56:39.464Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-17T01:56:39.465Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/vota-sp-dev  
+  
+ Mon Jul 16 2018 22:56:39 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2018-07-17T01:56:40.469Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/bwowk/Projects/votasp/votasp-backend/cloud-functions'...
+[info] 
+[debug] [2018-07-17T01:56:41.155Z] Error: EACCES: permission denied, mkdir '/usr/lib/node_modules/firebase-tools/node_modules/@google-cloud/functions-emulator/logs'
+    at Object.fs.mkdirSync (fs.js:874:3)
+    at Object.assertLogsPath (/usr/lib/node_modules/firebase-tools/node_modules/@google-cloud/functions-emulator/src/emulator/logs.js:65:10)
+    at new Controller (/usr/lib/node_modules/firebase-tools/node_modules/@google-cloud/functions-emulator/src/cli/controller.js:77:32)
+    at FunctionsEmulator.start (/usr/lib/node_modules/firebase-tools/lib/functionsEmulator.js:113:21)
+    at Object.start (/usr/lib/node_modules/firebase-tools/lib/serve/functions.js:9:29)
+    at /usr/lib/node_modules/firebase-tools/lib/serve/index.js:17:21
+    at arrayMap (/usr/lib/node_modules/firebase-tools/node_modules/lodash/lodash.js:639:23)
+    at Function.map (/usr/lib/node_modules/firebase-tools/node_modules/lodash/lodash.js:9554:14)
+    at _serve (/usr/lib/node_modules/firebase-tools/lib/serve/index.js:15:7)
+    at Command._action (/usr/lib/node_modules/firebase-tools/commands/serve.js:48:12)
+[error] 
+[error] Error: An unexpected error has occurred.
