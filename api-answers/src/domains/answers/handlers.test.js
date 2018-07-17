@@ -83,5 +83,44 @@ describe('Domains/Answers/Handlers', () => {
       expect(context.ok.mock.calls[0][0].toObject()).toMatchObject(_SampleAnswers);
     });
 
+
+    xit('should update candidate answer', async () => {
+
+      const context = {
+        state: { user: {
+          isCandidate: true,
+          sub: 'biru|laibe12345',
+        } },
+        request: {
+          body: [
+            { questionId: 1, answer: 'concordo' },
+          ],
+        },
+        ok: jest.fn(),
+        notFound: jest.fn(),
+        internalServerError: jest.fn(),
+      };
+
+      const contextOld = {
+        state: { user: {
+          isCandidate: true,
+          sub: 'biru|laibe12345',
+        } },
+        request: {
+          body: _SampleAnswers.answers,
+        },
+        ok: jest.fn(),
+        notFound: jest.fn(),
+        internalServerError: jest.fn(),
+      };
+
+      await saveUserAnswers(contextOld);
+
+      expect(context.ok.mock.calls.length).toBe(1);
+      expect(context.notFound.mock.calls.length).toBe(0);
+      expect(context.internalServerError.mock.calls.length).toBe(0);
+      console.log(context.ok.mock.calls[0][0].toObject())
+    });
+
   });
 })

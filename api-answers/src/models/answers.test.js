@@ -24,6 +24,10 @@ describe('Models/Answers/Candidate', () => {
 
     expect( JSON.parse(JSON.stringify( answers )) ).toMatchObject(_answers);
   });
+
+  it('should have method updateOrAdd', () => {
+    Answers.Candidate.updateOrAdd( { ..._answers, biru: 'laibe' });
+  })
 });
 
 
