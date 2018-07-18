@@ -1,36 +1,61 @@
 const functions = require('firebase-functions');
 const fs = require('fs');
 
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-exports.helloWorld = functions.https.onRequest((request, response) => {
-    const filePath = '/tmp/test.txt';
+exports.helloWorld = functions.https.onRequest((req, resp) => {
 
-    const getNewDate = () => {
-        const now = Math.floor(Date.now() / 1000);
-        const file = fs.openSync(filePath, 'w')
-        fs.writeSync(file, now);
-        return now;
+    const questions_number = 40;
+    const cacheTtlInMs = 60000;
+
+    const generate = (idPrefix, num, alternatives) => {
+      return Array(num).fill(1).map( (v, i) => {
+        return {
+          id: idPrefix+'-'+i,
+          answers: Array(questions_number).fill(1).map( (vv, j) => {
+            return {
+              questionId: j,
+                answer: alternatives[Math.floor(Math.random() * alternatives.length)]
+            }
+          })
+        }
+      });
+    };
+
+    const cacheFilePath = '/tmp/candidateAnswers';
+
+    const fetchCandidateData = () => {
+      return generate('candidate', 4000, [2, 1, -1, -2]);
+    };
+
+    const saveToCache = (candidateData) => {
+      const fileDescriptor = fs.openSync(cacheFilePath, 'w');
+      fs.writeSync(fileDescriptor, JSON.stringify(candidateData));
+    };
+
+    const readCache = () => {
+      return JSON.parse(fs.readFileSync(cacheFilePath));
+    };
+
+    const updateCandidateData = () => {
+      const newData = fetchCandidateData();
+      saveToCache(newData);
+    };
+
+    if (! fs.existsSync(cacheFilePath)) {
+      updateCandidateData();
     }
 
-    if (! fs.existsSync(filePath)) {
-        response.send(getNewDate());
-        return;
+    const cacheCreationDatetime = new Date(fs.statSync(cacheFilePath).mtime);
+    const currentDatetime = new Date();
+    const cacheAgeInMs = currentDatetime - cacheCreationDatetime;
+    if ( cacheAgeInMs > cacheTtlInMs) {
+      updateCandidateData();
     }
 
-    const cachedDate = parseInt(fs.readFileSync(filePath), 10);
-    console.log('cached: '+cachedDate);
-    const now = Math.floor(Date.now() / 1000);
-    console.log('now: '+now);
-    console.log('diff:'+ (now - cachedDate))
-
-
-    
-    if (now - cachedDate > 60) {
-        response.send(new Date(getNewDate()*1000));
-        return;
-    }
-
-    response.send(new Date(cachedDate*1000));
+    const cacheStats = fs.statSync(cacheFilePath);
+    const cachedData = [readCache()];
+    resp.send({
+      lastCacheUpdate: cacheStats.mtime,
+      cacheSize: cacheStats.size,
+      cacheAge: cacheAgeInMs
+    });
 });
