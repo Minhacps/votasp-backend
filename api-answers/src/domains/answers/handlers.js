@@ -20,11 +20,10 @@ const _listAnswersGenerator = (type = 'Voter') =>
 
 const _saveAnswersGenerator = (type = 'Voter') =>
   (context) =>
-    new Answers[type]({
+    Answers[type].updateOrAdd({
       userId: context.state.user.sub,
       answers: context.request.body,
     })
-      .save()
       .then( _genericResponseOrNotFound(context) )
       .catch( _genericInternalErrorGenerator(context) );
 
