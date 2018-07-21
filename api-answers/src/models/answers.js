@@ -6,9 +6,10 @@ const schema = new Mongoose.Schema( Joigoose.convert(Answers) );
 
 schema.statics.updateOrAdd = function (answers) {
   return this.find({ userId: answers.userId })
-    .then( (data) => data ?
-      ( new this(answers).save() ) :
-      ( new this(data).save(answers) )
+    .then( (data) =>
+      data.length ?
+        ( new this(data[0]).save(answers) ) :
+        ( new this(answers).save() )
     )
     .catch(console.error);
 };
