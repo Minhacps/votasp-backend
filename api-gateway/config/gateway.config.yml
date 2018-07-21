@@ -9,16 +9,16 @@ serviceEndpoints:
 apiEndpoints:
   questions-api:
     host: ${API_HOST}
-    paths: /questions/*
+    paths: /questions*
   answers-api:
     host: ${API_HOST}
-    paths: /answers/*
+    paths: /answers*
   public-answers-api:
     host: ${API_HOST}
-    paths: /public-answers/*
+    paths: /public-answers*
   matcher-api:
     host: ${API_HOST}
-    paths: /matcher/*
+    paths: /matcher*
 policies:
   - jwt
   - proxy
