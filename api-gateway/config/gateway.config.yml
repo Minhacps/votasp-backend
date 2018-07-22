@@ -35,7 +35,7 @@ pipelines:
             -
               condition:
                 name: regexpmatch
-                match: ^/questions/(.*)$
+                match: ^/questions/?(.*)$
               action:
                 rewrite: /$1
       - proxy:
@@ -50,7 +50,7 @@ pipelines:
             -
               condition:
                 name: regexpmatch
-                match: ^/public-answers/(.*)$
+                match: ^/public-answers/?(.*)$
               action:
                 rewrite: /$1
       - terminate:
@@ -67,7 +67,7 @@ pipelines:
             -
               condition:
                 name: regexpmatch
-                match: ^/answers/(.*)$
+                match: ^/answers/?(.*)$
               action:
                 rewrite: /$1
       - jwt:
@@ -86,9 +86,9 @@ pipelines:
             -
               condition:
                 name: regexpmatch
-                match: ^/matcher/(.*)$
+                match: ^/matcher(.*)$
               action:
-                rewrite: /$1
+                rewrite: $1
       - jwt:
         - action:
             secretOrPublicKeyFile: config/pubKey.pem
