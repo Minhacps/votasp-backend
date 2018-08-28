@@ -1,3 +1,4 @@
+const { defaultsDeep } = require('lodash');
 const Mongoose = require('mongoose');
 const Joigoose = require('../infrastructure/joigoose');
 const Answers = require('../schemas/answers');
@@ -8,7 +9,7 @@ schema.statics.updateOrAdd = function (answers) {
   return this.find({ userId: answers.userId })
     .then( (data) =>
       data.length ?
-        ( new this(data[0]).save(answers) ) :
+        ( new this( defaultsDeep(data[0], answers) ).save() ) :
         ( new this(answers).save() )
     )
     .catch(console.error);
